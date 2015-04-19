@@ -1,13 +1,13 @@
-" textobj-brace: a text object for braces of any kind
-" Author: Julian Berman
+" textobj-pair: a text object for blocks between matchit pairs
+" Author: maikelmeyers
 " Version: 0.1.0
 
-if exists('g:loaded_textobj_brace')
+if exists('g:loaded_textobj-pair')
     finish
 endif
 
 
-call textobj#user#plugin('brace', {
+call textobj#user#plugin('pair', {
     \ '-': {
     \     '*sfile*': expand('<sfile>:p'),
     \     'select-a': 'aj',  '*select-a-function*': 's:select_a',
@@ -16,7 +16,7 @@ call textobj#user#plugin('brace', {
 
 
 function! s:select(object_type)
-    call search('[\|(\|{\|<', 'bce')
+    normal! Ä
     let start_position = getpos('.')
     normal! %
     let end_position = getpos('.')
@@ -40,4 +40,4 @@ function! s:select_i()
 endfunction
 
 
-let g:loaded_textobj_brace = 1
+let g:loaded_textobj_pair = 1
