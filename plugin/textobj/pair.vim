@@ -10,8 +10,8 @@ endif
 call textobj#user#plugin('pair', {
     \ '-': {
     \     '*sfile*': expand('<sfile>:p'),
-    \     'select-a': 'aj',  '*select-a-function*': 's:select_a',
-    \     'select-i': 'ij',  '*select-i-function*': 's:select_i',
+    \     'select-a': 'am',  '*select-a-function*': 's:select_a',
+    \     'select-i': 'im',  '*select-i-function*': 's:select_i',
     \ }})
 
 
