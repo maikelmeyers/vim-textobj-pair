@@ -21,7 +21,7 @@ function! s:select(object_type)
     let skip = 'synIDattr(synID(line("."), col("."), 0), "name") =~? "string\\|comment"'
     call searchpair(b:match_pairs_open,'',b:match_pairs_close,'bW',skip)
     let start_position = getpos('.')
-    normal! %
+    call searchpair(b:match_pairs_open,'',b:match_pairs_close,'W',skip)
     let end_position = getpos('.')
     echo end_position
 
